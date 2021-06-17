@@ -22,6 +22,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
@@ -146,7 +147,6 @@ public class NiceSpinner extends AppCompatTextView {
                 defaultPadding);
         setClickable(true);
         backgroundSelector = typedArray.getResourceId(R.styleable.NiceSpinner_backgroundSelector, R.drawable.selector);
-        setBackgroundResource(backgroundSelector);
         textColor = typedArray.getColor(R.styleable.NiceSpinner_textTint, getDefaultTextColor(context));
         setTextColor(textColor);
         popupWindow = new ListPopupWindow(context);
@@ -181,7 +181,6 @@ public class NiceSpinner extends AppCompatTextView {
         });
 
         popupWindow.setModal(true);
-
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
             public void onDismiss() {
